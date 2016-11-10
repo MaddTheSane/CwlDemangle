@@ -2356,4 +2356,14 @@ class CwlDemangleTests: XCTestCase {
 			XCTAssert(input == output, "Failed to demangle \(input). Got \(error), expected \(output)")
 		}
 	}
+	
+	func test_cxaDelete() {
+		let input = "__ZdaPv"
+		
+		do {
+			let result = try CxxDemangle(input)
+		} catch {
+			
+		}
+	}
 }
