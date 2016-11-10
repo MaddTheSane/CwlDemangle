@@ -99,8 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				C9E054EE1CD4DDA1001658AB /* CwlDemangleTests.swift */,
-				C9E054F01CD4DDA1001658AB /* Info.plist */,
 				5584C6EF1DD4419E0060645F /* CxaDemangleTests.swift */,
+				C9E054F01CD4DDA1001658AB /* Info.plist */,
 			);
 			path = CwlDemangleTests;
 			sourceTree = "<group>";

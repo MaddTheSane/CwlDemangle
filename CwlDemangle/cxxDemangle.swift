@@ -11,19 +11,19 @@ import Foundation
 @_silgen_name("__cxa_demangle") private func CXXDemangle(_ mangled_name: UnsafePointer<Int8>, outputBuffer: UnsafeMutablePointer<CChar>?, length: UnsafeMutablePointer<size_t>?, status: UnsafeMutablePointer<Int32>) -> UnsafeMutablePointer<CChar>?
 
 
-enum CxxDemangleErrors: Int32, Error {
+public enum CxxDemangleErrors: Int32, Error {
 	/// The demangling operation succeeded.
 	case succeeded = 0
 	/// A memory allocation failiure occurred.
 	case outOfRAM = -1
-	/// mangled_name is not a valid name under the C++ ABI mangling rules.
+	/// `cxxSymbol` is not a valid name under the C++ ABI mangling rules.
 	case mangledNameInvalid = -2
 	/// One of the arguments is invalid.
 	case invalidArgument = -3
-	
+	/// Unable to create string.
 	case characterEncoding = -4
 	
-	var _code: Int {
+	public var _code: Int {
 		return Int(rawValue)
 	}
 }
