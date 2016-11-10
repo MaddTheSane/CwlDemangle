@@ -8,7 +8,7 @@
 
 import Foundation
 
-@_silgen_name("__cxa_demangle") private func CXXDemangle(_ mangled_name: UnsafePointer<Int8>, outputBuffer: UnsafeMutablePointer<CChar>?, length: UnsafeMutablePointer<size_t>?, status: UnsafeMutablePointer<Int32>) -> UnsafeMutablePointer<CChar>
+@_silgen_name("__cxa_demangle") private func CXXDemangle(_ mangled_name: UnsafePointer<Int8>, outputBuffer: UnsafeMutablePointer<CChar>?, length: UnsafeMutablePointer<size_t>?, status: UnsafeMutablePointer<Int32>) -> UnsafeMutablePointer<CChar>?
 
 
 enum CxxDemangleErrors: Int32, Error {
@@ -28,13 +28,13 @@ enum CxxDemangleErrors: Int32, Error {
 	}
 }
 
-func CxxDemangle(_ cxxSymbol: String) throws -> String {
+public func CxxDemangle(_ cxxSymbol: String) throws -> String {
 	var status: Int32 = 0
-	var toRet = CXXDemangle(cxxSymbol, outputBuffer: nil, length: nil, status: &status)
+	guard let toRet = CXXDemangle(cxxSymbol, outputBuffer: nil, length: nil, status: &status) else {
+		throw CxxDemangleErrors(rawValue: status)!
+	}
 	defer {
-		if toRet != nil {
-			free(toRet)
-		}
+		free(toRet)
 	}
 	if let errVal = CxxDemangleErrors(rawValue: status), errVal != .succeeded {
 		throw errVal

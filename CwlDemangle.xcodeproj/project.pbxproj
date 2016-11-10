@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5584C6ED1DD440000060645F /* cxxDemangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592D89F1CE9A6C7006493C1 /* cxxDemangle.swift */; };
+		5584C6EE1DD440250060645F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5592D8A11CE9A8C1006493C1 /* libc++.tbd */; };
+		5584C6F01DD4419E0060645F /* CxaDemangleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584C6EF1DD4419E0060645F /* CxaDemangleTests.swift */; };
 		5592D8A01CE9A6C7006493C1 /* cxxDemangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592D89F1CE9A6C7006493C1 /* cxxDemangle.swift */; };
 		5592D8A21CE9A8C1006493C1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5592D8A11CE9A8C1006493C1 /* libc++.tbd */; };
 		C9E054DE1CD4AE3F001658AB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E054DD1CD4AE3F001658AB /* main.swift */; };
@@ -30,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5584C6EF1DD4419E0060645F /* CxaDemangleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CxaDemangleTests.swift; sourceTree = "<group>"; };
 		5592D89F1CE9A6C7006493C1 /* cxxDemangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cxxDemangle.swift; sourceTree = "<group>"; };
 		5592D8A11CE9A8C1006493C1 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		C9E054DA1CD4AE3F001658AB /* CwlDemangle */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CwlDemangle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5584C6EE1DD440250060645F /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +100,7 @@
 			children = (
 				C9E054EE1CD4DDA1001658AB /* CwlDemangleTests.swift */,
 				C9E054F01CD4DDA1001658AB /* Info.plist */,
+				5584C6EF1DD4419E0060645F /* CxaDemangleTests.swift */,
 			);
 			path = CwlDemangleTests;
 			sourceTree = "<group>";
@@ -200,7 +206,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9E054EF1CD4DDA1001658AB /* CwlDemangleTests.swift in Sources */,
+				5584C6F01DD4419E0060645F /* CxaDemangleTests.swift in Sources */,
 				C9E055421CD4E0CC001658AB /* CwlDemangle.swift in Sources */,
+				5584C6ED1DD440000060645F /* cxxDemangle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
