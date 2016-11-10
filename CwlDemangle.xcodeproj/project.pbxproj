@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5592D8A01CE9A6C7006493C1 /* cxxDemangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5592D89F1CE9A6C7006493C1 /* cxxDemangle.swift */; };
+		5592D8A21CE9A8C1006493C1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5592D8A11CE9A8C1006493C1 /* libc++.tbd */; };
 		C9E054DE1CD4AE3F001658AB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E054DD1CD4AE3F001658AB /* main.swift */; };
 		C9E054E51CD4B0E2001658AB /* CwlDemangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E054E41CD4B0E2001658AB /* CwlDemangle.swift */; };
 		C9E054E71CD4B2F2001658AB /* manglings.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9E054E61CD4B2DF001658AB /* manglings.txt */; };
@@ -28,6 +30,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5592D89F1CE9A6C7006493C1 /* cxxDemangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cxxDemangle.swift; sourceTree = "<group>"; };
+		5592D8A11CE9A8C1006493C1 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		C9E054DA1CD4AE3F001658AB /* CwlDemangle */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CwlDemangle; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E054DD1CD4AE3F001658AB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C9E054E41CD4B0E2001658AB /* CwlDemangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CwlDemangle.swift; sourceTree = "<group>"; };
@@ -42,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5592D8A21CE9A8C1006493C1 /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +63,7 @@
 		C9E054D11CD4AE3F001658AB = {
 			isa = PBXGroup;
 			children = (
+				5592D8A11CE9A8C1006493C1 /* libc++.tbd */,
 				C9E054DC1CD4AE3F001658AB /* CwlDemangle */,
 				C9E054ED1CD4DDA1001658AB /* CwlDemangleTests */,
 				C9E054DB1CD4AE3F001658AB /* Products */,
@@ -78,6 +84,7 @@
 			children = (
 				C9E054E41CD4B0E2001658AB /* CwlDemangle.swift */,
 				C9E054DD1CD4AE3F001658AB /* main.swift */,
+				5592D89F1CE9A6C7006493C1 /* cxxDemangle.swift */,
 				C9E054E61CD4B2DF001658AB /* manglings.txt */,
 			);
 			path = CwlDemangle;
@@ -184,6 +191,7 @@
 			files = (
 				C9E054DE1CD4AE3F001658AB /* main.swift in Sources */,
 				C9E054E51CD4B0E2001658AB /* CwlDemangle.swift in Sources */,
+				5592D8A01CE9A6C7006493C1 /* cxxDemangle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
