@@ -11,6 +11,9 @@
 //  See http://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
 //
 
+#if SWIFT_PACKAGE
+	import CwlDemangle
+#endif
 import Foundation
 
 //
@@ -55,7 +58,7 @@ struct Mangling {
 		} else {
 			self.input = input
 		}
-		if output.starts(with: "{"), let endBrace = output.index(where: { $0 == "}" }), let space = output.index(endBrace, offsetBy: 2, limitedBy: output.endIndex) {
+		if output.starts(with: "{"), let endBrace = output.firstIndex(where: { $0 == "}" }), let space = output.index(endBrace, offsetBy: 2, limitedBy: output.endIndex) {
 			self.output = String(output[space...])
 		} else {
 			self.output = output
@@ -78,7 +81,7 @@ func readManglings() -> [Mangling] {
 				enum InputError: Error { case unableToSplitLine(String) }
 				throw InputError.unableToSplitLine(i)
 			}
-			return Mangling(input: components[0], output: components[1])
+			return Mangling(input: components[0].trimmingCharacters(in: .whitespaces), output: components[1].trimmingCharacters(in: .whitespaces))
 		}
 	} catch {
 		fatalError("Error reading manglings.txt file: \(error)")
@@ -118,7 +121,7 @@ func generateTestCases(_ manglings: [Mangling]) {
 					do {
 						let parsed = try parseMangledSwiftSymbol(input)
 						let result = parsed.print(using: SymbolPrintOptions.default.union(.synthesizeSugarOnTypes))
-						XCTAssert(result == output, "Failed to demangle \\(input). Got \\(result), expected \\(output)")
+						XCTAssert(result == output, "Failed to demangle \\(input).\\nGot\\n    \\(result)\\nexpected\\n    \\(output)")
 					} catch {
 						XCTFail("Failed to demangle \\(input). Got \\(error), expected \\(output)")
 					}
